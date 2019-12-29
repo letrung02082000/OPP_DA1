@@ -4,6 +4,7 @@
 
 #include "macros.h"
 #include <iostream>
+#include <math>
 
 _JD_BEGIN
 
@@ -90,7 +91,7 @@ public:
 
 	using const_pointer = const_iterator;
 	using pointer = iterator;
-	
+
 	class const_reverse_iterator: public const_iterator {
 		using _myBase = const_iterator;
 		friend class _JD String;
@@ -172,7 +173,7 @@ private:
 	inline String::String_iterator_type _rbegin() const;
 	inline String_iterator_type _end() const;
 	size_t _getLength(const const_iterator first, const const_iterator second);
-	
+
 	//	Equality operator overload
 public:
 	String & operator= (const String &);
@@ -240,7 +241,7 @@ public:
 	String& replace(size_type pos, size_t len, const char* s); // c - string(4)
 	String& replace(const_iterator i1, const_iterator i2, const char* other);  // c - string(5)
 	String& replace(size_type pos, size_t len, const char* other, size_t n); // buffer(6)
-	String& replace(const_iterator i1, const_iterator i2, const char* other, size_t n); // buffer(7)	
+	String& replace(const_iterator i1, const_iterator i2, const char* other, size_t n); // buffer(7)
 	String& replace(size_type pos, size_t len, size_t n, char c); // fill(8)
 	String& replace(const_iterator i1, const_iterator i2, size_type n, char c); // fill(9)
 	String& replace(const_iterator i1, const_iterator i2, const_iterator first, const_iterator second); // range(10)
